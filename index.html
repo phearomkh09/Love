@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Love Confession ❤️</title>
+<title>Good Luck ❤️</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Poppins:wght@400;600;800&display=swap');
@@ -15,16 +15,22 @@
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
+  width: 100%;
   font-family: 'Battambang', sans-serif;
   background: radial-gradient(circle at top, #51206c, #170c2c 60%, #080514);
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  padding: 20px;
+  padding: 20px 0 50px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .stars {
@@ -36,6 +42,7 @@ body {
     radial-gradient(#ff75dc 1px, transparent 1px);
   background-size: 70px 70px, 110px 110px;
   animation: sparkle 5s linear infinite;
+  z-index: 0;
 }
 
 @keyframes sparkle {
@@ -45,8 +52,9 @@ body {
 
 .container {
   position: relative;
-  width: 100%;
+  width: calc(100% - 40px);
   max-width: 430px;
+  margin: 20px auto;
   text-align: center;
   padding: 35px 25px;
   border: 1px solid #ff69d488;
@@ -70,7 +78,7 @@ body {
 h1 {
   font-family: 'Poppins', sans-serif;
   color: #ff8bdf;
-  font-size: 30px;
+  font-size: clamp(25px, 7vw, 30px);
   text-shadow: 0 0 15px #ff28b5;
   margin: 12px 0;
 }
@@ -171,17 +179,41 @@ button:hover {
   color: #bda3d5;
   margin-top: 25px;
 }
+
+.music-btn {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  background: #ff2e9e;
+  color: white;
+  border: 1px solid #ff9cde;
+  border-radius: 30px;
+  padding: 8px 15px;
+  font-size: 13px;
+}
+
 </style>
 </head>
 
 <body>
+
 <div class="stars"></div>
+
+<!-- Music -->
+<audio id="bgMusic" autoplay loop preload="auto">
+  <source src="./love.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()">
+🎵 Music ON
+</button>
 
 <div class="container">
 
   <div class="heart-icon">💗</div>
 
-  <h1>LOVE CONFESSION</h1>
+  <h1>Good luck💗</h1>
 
   <p class="subtitle">
     ខ្ញុំមានរឿងមួយចង់ប្រាប់អ្នក... 🥺<br>
@@ -193,94 +225,158 @@ button:hover {
   </button>
 
   <div class="message" id="message">
-    <h2>I LOVE YOU ❤️</h2>
+
+    <h2>Good Luck Phanha ❤️</h2>
 
     <p>
       ខ្ញុំមិនដឹងថាអ្នកគិតយ៉ាងណាទេ...<br>
       ប៉ុន្តែខ្ញុំចង់ប្រាប់ថា<br>
       អ្នកគឺជាមនុស្សពិសេសក្នុងចិត្តខ្ញុំ។ 🥰<br><br>
-      តើអ្នកព្រមទទួលស្នេហ៍ខ្ញុំទេ? 💍
+      ខ្ញុំមានរឿងមួយចង់ប្រាប់អ្នក... 🥺❤️
+តាមពិតទៅ ខ្ញុំមានអារម្មណ៍ល្អចំពោះអ្នកយូរហើយ។
+រាល់ពេលដែលបាននិយាយជាមួយអ្នក ខ្ញុំតែងតែមានស្នាមញញឹម។ 🥰
+
+ថ្ងៃនេះ ខ្ញុំសម្រេចចិត្តប្រាប់អ្នកពីអារម្មណ៍ពិតរបស់ខ្ញុំថា...
+
+ខ្ញុំចូលចិត្តអ្នក ❤️
+
+ខ្ញុំមិនដឹងថាអ្នកមានអារម្មណ៍ដូចខ្ញុំដែរឬអត់ទេ។
+អ្នកមិនចាំបាច់ប្រញាប់ឆ្លើយក៏បាន។
+ខ្ញុំនឹងគោរពការសម្រេចចិត្តរបស់អ្នកជានិច្ច។
+
+គ្រាន់តែចង់ឱ្យអ្នកដឹងថា អ្នកពិតជាមនុស្សពិសេសម្នាក់សម្រាប់ខ្ញុំ។ 💗
     </p>
 
     <button class="yes" onclick="answer(true)">
-      💖 ព្រម
+      💖 ខ្ញុំក៏ចូលចិត្តអ្នកដែរ
     </button>
 
     <button class="no" onclick="answer(false)">
-      🥺 មិនព្រម
+      🥺 សុំគិតបន្តិចសិន
     </button>
 
     <div class="result" id="result"></div>
+
   </div>
 
   <div class="footer">
     MADE WITH ❤️ | Zeii Nha
   </div>
+
 </div>
 
 <script>
-function openLove() {
-  document.getElementById("message").style.display = "block";
-  document.querySelector(".open-btn").style.display = "none";
-  hearts();
+
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+music.volume = 0.7;
+
+// Auto play attempt
+window.addEventListener("load", () => {
+  playMusic();
+});
+
+function playMusic() {
+  music.play().then(() => {
+    musicBtn.innerHTML = "🎵 Music ON";
+  }).catch(() => {
+    musicBtn.innerHTML = "▶ Play Music";
+  });
 }
 
+// Music button
+function toggleMusic() {
+  if (music.paused) {
+    playMusic();
+  } else {
+    music.pause();
+    musicBtn.innerHTML = "🔇 Music OFF";
+  }
+}
+
+// Open love confession
+function openLove() {
+
+  document.getElementById("message").style.display = "block";
+
+  document.querySelector(".open-btn").style.display = "none";
+
+  // Start music from this user click
+  playMusic();
+
+  hearts();
+
+  setTimeout(() => {
+    document.getElementById("message").scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }, 300);
+}
+
+// Answer
 function answer(value) {
+
   const result = document.getElementById("result");
 
   if(value) {
     result.innerHTML =
-      "YAYYYY! 🥰❤️<br>អរគុណដែលទទួលស្នេហ៍ខ្ញុំ 💍";
-    hearts();
+      "YAYYYY! 🥰❤️<br>អរគុណដែរអ្នកគិតដូចខ្ញុំ";
+
+    hearts(50);
+
   } else {
     result.innerHTML =
       "មិនអីទេ... ខ្ញុំនឹងគោរពការសម្រេចចិត្តរបស់អ្នក។ ❤️";
   }
 }
 
-function hearts() {
-  for(let i=0; i<30; i++) {
+// Floating hearts
+function hearts(amount = 30) {
+
+  for(let i = 0; i < amount; i++) {
+
     const h = document.createElement("div");
+
     h.className = "float-heart";
-    h.innerHTML = ["❤️","💗","💕","💖","💘"][Math.floor(Math.random()*5)];
+
+    h.innerHTML = ["❤️","💗","💕","💖","💘"][
+      Math.floor(Math.random()*5)
+    ];
+
     h.style.left = Math.random()*100 + "vw";
-    h.style.animationDuration = (3+Math.random()*4) + "s";
+
+    h.style.animationDuration =
+      (3 + Math.random()*4) + "s";
+
     document.body.appendChild(h);
-    setTimeout(() => h.remove(),7000);
+
+    setTimeout(() => h.remove(), 7000);
   }
 }
 
+// Automatic floating hearts
 setInterval(() => {
+
   const h = document.createElement("div");
+
   h.className = "float-heart";
   h.innerHTML = "💗";
   h.style.left = Math.random()*100 + "vw";
+
   document.body.appendChild(h);
-  setTimeout(() => h.remove(),6000);
-}, 900);
+
+  setTimeout(() => h.remove(), 6000);
+
+}, 1200);
+
+// Retry music after first user interaction if browser blocked autoplay
+document.addEventListener("pointerdown", () => {
+  if (music.paused) playMusic();
+}, { once: true });
+
 </script>
-  <audio id="bgMusic" autoplay loop preload="auto">
-  <source src="./love.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-const music = document.getElementById("bgMusic");
-
-music.volume = 0.7;
-
-function playMusic() {
-  music.play().catch(error => {
-    console.log("Music playback blocked:", error);
-  });
-}
-
-window.addEventListener("load", () => {
-  playMusic();
-});
-
-document.addEventListener("click", playMusic, { once: true });
-document.addEventListener("touchstart", playMusic, { once: true });
-                     </script>
 
 </body>
 </html>
