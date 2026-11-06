@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Confession ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Poppins:wght@400;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Battambang', sans-serif;
+  background: radial-gradient(circle at top, #51206c, #170c2c 60%, #080514);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#ff75dc 1px, transparent 1px);
+  background-size: 70px 70px, 110px 110px;
+  animation: sparkle 5s linear infinite;
+}
+
+@keyframes sparkle {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 70px 70px, -110px 110px; }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  text-align: center;
+  padding: 35px 25px;
+  border: 1px solid #ff69d488;
+  border-radius: 28px;
+  background: #ffffff0d;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 0 40px #ff2eae35;
+  z-index: 2;
+}
+
+.heart-icon {
+  font-size: 65px;
+  animation: beat 1s infinite;
+  filter: drop-shadow(0 0 15px #ff35b9);
+}
+
+@keyframes beat {
+  50% { transform: scale(1.2); }
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  color: #ff8bdf;
+  font-size: 30px;
+  text-shadow: 0 0 15px #ff28b5;
+  margin: 12px 0;
+}
+
+.subtitle {
+  color: #e9c9ff;
+  line-height: 2;
+  margin-bottom: 25px;
+}
+
+button {
+  font-family: 'Battambang', sans-serif;
+  border: none;
+  padding: 13px 25px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: .3s;
+}
+
+.open-btn {
+  background: linear-gradient(90deg,#ff2e9e,#a83dff);
+  color: white;
+  box-shadow: 0 0 25px #ff2e9e88;
+}
+
+button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 30px #ff39c5;
+}
+
+.message {
+  display: none;
+  margin-top: 25px;
+  padding: 22px 12px;
+  border: 1px solid #ff6bdc;
+  border-radius: 20px;
+  background: #ff4fbd15;
+  animation: appear .8s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message h2 {
+  color: #ff8bdf;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 12px;
+}
+
+.message p {
+  line-height: 2;
+  color: #fff0fb;
+  margin-bottom: 15px;
+}
+
+.yes {
+  background: #ff2e9e;
+  color: white;
+  margin: 5px;
+}
+
+.no {
+  background: transparent;
+  color: white;
+  border: 1px solid #ff7bdd;
+  margin: 5px;
+}
+
+.result {
+  margin-top: 15px;
+  color: #ff9cde;
+  font-weight: bold;
+  line-height: 1.8;
+}
+
+.float-heart {
+  position: fixed;
+  bottom: -40px;
+  font-size: 24px;
+  pointer-events: none;
+  animation: floatUp 6s linear forwards;
+  z-index: 5;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.footer {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  color: #bda3d5;
+  margin-top: 25px;
+}
+</style>
+</head>
+
+<body>
+<div class="stars"></div>
+
+<div class="container">
+
+  <div class="heart-icon">💗</div>
+
+  <h1>LOVE CONFESSION</h1>
+
+  <p class="subtitle">
+    ខ្ញុំមានរឿងមួយចង់ប្រាប់អ្នក... 🥺<br>
+    តើអ្នកអាចស្តាប់ខ្ញុំបានទេ? To Zeii Nha
+  </p>
+
+  <button class="open-btn" onclick="openLove()">
+    ❤️ ចុចទីនេះ
+  </button>
+
+  <div class="message" id="message">
+    <h2>I LOVE YOU ❤️</h2>
+
+    <p>
+      ខ្ញុំមិនដឹងថាអ្នកគិតយ៉ាងណាទេ...<br>
+      ប៉ុន្តែខ្ញុំចង់ប្រាប់ថា<br>
+      អ្នកគឺជាមនុស្សពិសេសក្នុងចិត្តខ្ញុំ។ 🥰<br><br>
+      តើអ្នកព្រមទទួលស្នេហ៍ខ្ញុំទេ? 💍
+    </p>
+
+    <button class="yes" onclick="answer(true)">
+      💖 ព្រម
+    </button>
+
+    <button class="no" onclick="answer(false)">
+      🥺 មិនព្រម
+    </button>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <div class="footer">
+    MADE WITH ❤️ | Zeii Nha
+  </div>
+</div>
+
+<script>
+function openLove() {
+  document.getElementById("message").style.display = "block";
+  document.querySelector(".open-btn").style.display = "none";
+  hearts();
+}
+
+function answer(value) {
+  const result = document.getElementById("result");
+
+  if(value) {
+    result.innerHTML =
+      "YAYYYY! 🥰❤️<br>អរគុណដែលទទួលស្នេហ៍ខ្ញុំ 💍";
+    hearts();
+  } else {
+    result.innerHTML =
+      "មិនអីទេ... ខ្ញុំនឹងគោរពការសម្រេចចិត្តរបស់អ្នក។ ❤️";
+  }
+}
+
+function hearts() {
+  for(let i=0; i<30; i++) {
+    const h = document.createElement("div");
+    h.className = "float-heart";
+    h.innerHTML = ["❤️","💗","💕","💖","💘"][Math.floor(Math.random()*5)];
+    h.style.left = Math.random()*100 + "vw";
+    h.style.animationDuration = (3+Math.random()*4) + "s";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(),7000);
+  }
+}
+
+setInterval(() => {
+  const h = document.createElement("div");
+  h.className = "float-heart";
+  h.innerHTML = "💗";
+  h.style.left = Math.random()*100 + "vw";
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(),6000);
+}, 900);
+</script>
+  <audio id="bgMusic" autoplay loop>
+  <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+// សាកល្បងចាក់ចម្រៀងដោយស្វ័យប្រវត្តិ
+window.addEventListener("load", () => {
+  music.volume = 0.7;
+
+  music.play().catch(() => {
+    // Browser មិនអនុញ្ញាត Auto Play
+    // ចាក់វិញនៅពេលអ្នកប៉ះអេក្រង់
+    document.addEventListener("click", playMusic, {once:true});
+    document.addEventListener("touchstart", playMusic, {once:true});
+  });
+});
+
+function playMusic() {
+  music.play();
+}
+</script>
+
+</body>
+</html>
