@@ -4,26 +4,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Good Luck ❤️</title>
 
-<!-- Open Graph Preview -->
+<title>For Zeii Nha ❤️</title>
+
+<meta name="theme-color" content="#170b2b">
+<meta name="description" content="A special message from my heart to Zeii Nha ❤️">
+
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Love Confession">
 <meta property="og:title" content="ជូនចំពោះអ្នកនាង Zeii Nha ❤️">
-<meta property="og:description" content="ខ្ញុំមានរឿងមួយចង់ប្រាប់អ្នក... 🥺❤️ To Zeii Nha">
-<meta property="og:url" content="https://phearomkh09.github.io/Zeii-Nha/">
+<meta property="og:description" content="មានរឿងមួយចង់ប្រាប់អ្នក... 🥺❤️">
+<meta property="og:url" content="https://phearomkh09.github.io/Zii-Nha/">
 <meta property="og:image" content="https://phearomkh09.github.io/Zeii-Nha/preview.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ជូនចំពោះអ្នកនាង Zeii Nha ❤️">
-<meta name="twitter:description" content="I have something special to tell you ❤️">
-<meta name="twitter:image" content="https://phearomkh09.github.io/Zeii-Nha/preview.jpg">
-  
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%97%3C/text%3E%3C/svg%3E">
+
+<link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Poppins:wght@400;600;800&display=swap');
+:root {
+  --pink: #ff38aa;
+  --light-pink: #ff9be3;
+  --purple: #a855f7;
+  --white: #fff2fc;
+}
 
 * {
   margin: 0;
@@ -32,181 +37,331 @@
 }
 
 html {
-  min-height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
   scroll-behavior: smooth;
+  min-height: 100%;
 }
 
 body {
   min-height: 100vh;
-  width: 100%;
-  font-family: 'Battambang', sans-serif;
-  background: radial-gradient(circle at top, #51206c, #170c2c 60%, #080514);
-  color: white;
-  padding: 20px 0 50px;
   overflow-x: hidden;
-  overflow-y: auto;
+  font-family: 'Battambang', sans-serif;
+  color: var(--white);
+  background:
+    radial-gradient(ellipse at 50% 0%, #642477 0%, transparent 55%),
+    linear-gradient(145deg, #170b2b, #30143f, #10091d);
+  padding: 75px 15px 45px;
 }
+
+/* Background glow */
+
+.glow {
+  position: fixed;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: .35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow.one {
+  background: #ff20a7;
+  top: 10%;
+  left: -100px;
+}
+
+.glow.two {
+  background: #8b35ff;
+  bottom: 5%;
+  right: -100px;
+}
+
+/* Stars */
 
 .stars {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image:
-    radial-gradient(white 1px, transparent 1px),
-    radial-gradient(#ff75dc 1px, transparent 1px);
-  background-size: 70px 70px, 110px 110px;
-  animation: sparkle 5s linear infinite;
   z-index: 0;
+  background-image:
+    radial-gradient(#fff 1px, transparent 1px),
+    radial-gradient(#ff7bd9 1px, transparent 1px);
+  background-size: 75px 75px, 120px 120px;
+  animation: sparkle 12s linear infinite;
 }
 
 @keyframes sparkle {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 70px 70px, -110px 110px; }
+  to {
+    background-position: 75px 75px, -120px 120px;
+  }
 }
+
+/* Music */
+
+.music-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 20;
+  padding: 11px 18px;
+  border-radius: 40px;
+  color: white;
+  font-family: 'Battambang', sans-serif;
+  font-size: 13px;
+  background: linear-gradient(110deg, #ff269e, #a52dff);
+  border: 1px solid #ffb4e7;
+  box-shadow: 0 5px 25px #ff269e55;
+}
+
+/* Main card */
 
 .container {
   position: relative;
-  width: calc(100% - 40px);
-  max-width: 430px;
-  margin: 20px auto;
-  text-align: center;
-  padding: 35px 25px;
-  border: 1px solid #ff69d488;
-  border-radius: 28px;
-  background: #ffffff0d;
-  backdrop-filter: blur(18px);
-  box-shadow: 0 0 40px #ff2eae35;
   z-index: 2;
+  width: 100%;
+  max-width: 470px;
+  margin: 0 auto;
+  padding: 38px 24px;
+  text-align: center;
+  border: 1px solid #ff80db77;
+  border-radius: 32px;
+  background: linear-gradient(
+    145deg,
+    #ffffff12,
+    #ff3caa0b
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 0 60px #e32baf20,
+    inset 0 0 30px #ffffff08;
 }
+
+/* Logo */
+
+.logo {
+  font-family: 'Poppins', sans-serif;
+  color: var(--light-pink);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 3px;
+  margin-bottom: 35px;
+}
+
+/* Main heart */
 
 .heart-icon {
-  font-size: 65px;
-  animation: beat 1s infinite;
-  filter: drop-shadow(0 0 15px #ff35b9);
+  font-size: 85px;
+  display: inline-block;
+  filter: drop-shadow(0 0 25px #ff3aaf);
+  animation: heartbeat 1.4s infinite;
 }
 
-@keyframes beat {
-  50% { transform: scale(1.2); }
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.18); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.12); }
 }
+
+/* Titles */
 
 h1 {
   font-family: 'Poppins', sans-serif;
-  color: #ff8bdf;
-  font-size: clamp(25px, 7vw, 30px);
-  text-shadow: 0 0 15px #ff28b5;
-  margin: 12px 0;
+  font-size: clamp(25px, 7vw, 34px);
+  line-height: 1.4;
+  margin: 15px 0;
+  color: #ff91e1;
+  text-shadow: 0 0 25px #ff28b5;
 }
 
 .subtitle {
-  color: #e9c9ff;
-  line-height: 2;
-  margin-bottom: 25px;
+  font-size: 15px;
+  line-height: 2.2;
+  color: #f0d9ff;
+  margin: 15px 0 28px;
 }
 
+.tag {
+  display: inline-block;
+  color: #ffb2e7;
+  background: #ff4fb51c;
+  border: 1px solid #ff79d655;
+  border-radius: 30px;
+  padding: 6px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+
 button {
-  font-family: 'Battambang', sans-serif;
-  border: none;
-  padding: 13px 25px;
-  border-radius: 40px;
   cursor: pointer;
-  font-size: 16px;
-  transition: .3s;
+  transition: .3s ease;
+}
+
+button:active {
+  transform: scale(.94);
 }
 
 .open-btn {
-  background: linear-gradient(90deg,#ff2e9e,#a83dff);
+  padding: 15px 32px;
   color: white;
-  box-shadow: 0 0 25px #ff2e9e88;
+  font-family: 'Battambang', sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(110deg, #ff259c, #bd36ff);
+  box-shadow: 0 8px 30px #ff269e55;
 }
 
-button:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 30px #ff39c5;
+.open-btn:hover {
+  box-shadow: 0 0 40px #ff269eaa;
+  transform: translateY(-3px);
 }
+
+/* Confession */
 
 .message {
   display: none;
-  margin-top: 25px;
-  padding: 22px 12px;
-  border: 1px solid #ff6bdc;
-  border-radius: 20px;
-  background: #ff4fbd15;
+  margin-top: 32px;
+  padding: 25px 18px;
+  border: 1px solid #ff7bdc;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ffffff0c, #ff2eae13);
   animation: appear .8s ease;
 }
 
+.message.show {
+  display: block;
+}
+
 @keyframes appear {
-  from { opacity: 0; transform: translateY(25px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .message h2 {
-  color: #ff8bdf;
+  color: #ff9de4;
   font-family: 'Poppins', sans-serif;
-  margin-bottom: 12px;
+  font-size: 23px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px #ff38aa;
 }
 
 .message p {
-  line-height: 2;
   color: #fff0fb;
-  margin-bottom: 15px;
+  font-size: 15px;
+  line-height: 2.3;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.message .highlight {
+  color: #ff9bdf;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+/* Answer buttons */
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-top: 28px;
+}
+
+.yes, .no {
+  width: 100%;
+  padding: 14px 12px;
+  border-radius: 45px;
+  font-family: 'Battambang', sans-serif;
+  font-size: 15px;
 }
 
 .yes {
-  background: #ff2e9e;
   color: white;
-  margin: 5px;
+  border: none;
+  background: linear-gradient(100deg, #ff259c, #b42bff);
+  box-shadow: 0 5px 25px #ff269e44;
 }
 
 .no {
-  background: transparent;
-  color: white;
-  border: 1px solid #ff7bdd;
-  margin: 5px;
+  color: #ffb5e9;
+  border: 1px solid #ff83d8;
+  background: #ffffff08;
 }
 
-.result {
-  margin-top: 15px;
-  color: #ff9cde;
-  font-weight: bold;
-  line-height: 1.8;
+.yes:hover, .no:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px #ff38aa66;
 }
+
+/* Result */
+
+.result {
+  margin-top: 22px;
+  color: #ff9de4;
+  font-size: 15px;
+  line-height: 2;
+}
+
+/* Floating hearts */
 
 .float-heart {
   position: fixed;
-  bottom: -40px;
-  font-size: 24px;
+  bottom: -50px;
   pointer-events: none;
-  animation: floatUp 6s linear forwards;
   z-index: 5;
+  animation: floatUp 7s linear forwards;
 }
 
 @keyframes floatUp {
   to {
-    transform: translateY(-110vh) rotate(360deg);
+    transform: translateY(-115vh) rotate(360deg);
     opacity: 0;
   }
 }
 
+/* Footer */
+
 .footer {
+  margin-top: 35px;
+  color: #bfa4d1;
   font-family: 'Poppins', sans-serif;
-  font-size: 11px;
-  color: #bda3d5;
-  margin-top: 25px;
+  font-size: 10px;
+  letter-spacing: 1px;
 }
 
-.music-btn {
-  position: fixed;
-  top: 12px;
-  right: 12px;
-  z-index: 10;
-  background: #ff2e9e;
-  color: white;
-  border: 1px solid #ff9cde;
-  border-radius: 30px;
-  padding: 8px 15px;
-  font-size: 13px;
+.footer span {
+  color: #ff7bdc;
+}
+
+/* Mobile */
+
+@media(max-width: 380px) {
+  .container {
+    padding: 30px 17px;
+  }
+
+  .message {
+    padding: 22px 13px;
+  }
+
+  .message p {
+    font-size: 14px;
+  }
 }
 
 </style>
@@ -215,71 +370,96 @@ button:hover {
 <body>
 
 <div class="stars"></div>
+<div class="glow one"></div>
+<div class="glow two"></div>
 
 <!-- Music -->
-<audio id="bgMusic" autoplay loop preload="auto">
+<audio id="bgMusic" loop preload="auto">
   <source src="./love.mp3" type="audio/mpeg">
 </audio>
 
 <button class="music-btn" id="musicBtn" onclick="toggleMusic()">
-🎵 Music ON
+  ▶ Music ON
 </button>
 
-<div class="container">
+<!-- Main -->
+
+<main class="container">
+
+  <div class="logo">A SPECIAL MESSAGE ❤️</div>
 
   <div class="heart-icon">💗</div>
 
-  <h1>ជូនចំពោះព្រះនាងរបស់ខ្ញុំ💗</h1>
+  <div class="tag">MADE WITH LOVE</div>
+
+  <h1>ជូនចំពោះអ្នកនាង Zeii Nha</h1>
 
   <p class="subtitle">
-    ខ្ញុំមានរឿងមួយចង់ប្រាប់អ្នក... 🥺<br>
-    តើអ្នកអាចស្តាប់ខ្ញុំបានទេ? To Zeii Nha
+    មានរឿងមួយចង់ប្រាប់អ្នក... 🥺<br>
+    តើអ្នកអាចស្តាប់ខ្ញុំបន្តិចបានទេ?
   </p>
 
-  <button class="open-btn" onclick="openLove()">
-    ❤️ ចុចទីនេះ
+  <button class="open-btn" id="openBtn" onclick="openLove()">
+    💌 បើកសំបុត្រ
   </button>
 
-  <div class="message" id="message">
+  <!-- Confession -->
 
-    <h2>ជូនចំពោះអ្នកនាង Zeii nha ❤️</h2>
+  <section class="message" id="message">
+
+    <h2>Dear Zeii Nha ❤️</h2>
 
     <p>
-      ខ្ញុំមិនដឹងថាអ្នកគិតយ៉ាងណាទេ...<br>
-      ប៉ុន្តែខ្ញុំចង់ប្រាប់ថា<br>
-      អ្នកគឺជាមនុស្សពិសេសក្នុងចិត្តខ្ញុំ។ 🥰<br><br>
-      ខ្ញុំមានរឿងមួយចង់ប្រាប់អ្នក... 🥺❤️
-តាមពិតទៅ ខ្ញុំមានអារម្មណ៍ល្អចំពោះអ្នកយូរហើយ។
-រាល់ពេលដែលបាននិយាយជាមួយអ្នក ខ្ញុំតែងតែមានស្នាមញញឹម។ 🥰
-
-ថ្ងៃនេះ ខ្ញុំសម្រេចចិត្តប្រាប់អ្នកពីអារម្មណ៍ពិតរបស់ខ្ញុំថា...
-
-ខ្ញុំចូលចិត្តអ្នក ❤️
-
-ខ្ញុំមិនដឹងថាអ្នកមានអារម្មណ៍ដូចខ្ញុំដែរឬអត់ទេ។
-អ្នកមិនចាំបាច់ប្រញាប់ឆ្លើយក៏បាន។
-ខ្ញុំនឹងគោរពការសម្រេចចិត្តរបស់អ្នកជានិច្ច។
-
-គ្រាន់តែចង់ឱ្យអ្នកដឹងថា អ្នកពិតជាមនុស្សពិសេសម្នាក់សម្រាប់ខ្ញុំ។ 💗
+      ខ្ញុំមានរឿងមួយចង់ប្រាប់អ្នក... 🥺
     </p>
 
-    <button class="yes" onclick="answer(true)">
-      💖 ខ្ញុំក៏ចូលចិត្តអ្នកដែរ
-    </button>
+    <p>
+      តាមពិតទៅ ខ្ញុំមានអារម្មណ៍ល្អចំពោះអ្នកយូរហើយ។
+      រាល់ពេលដែលបាននិយាយជាមួយអ្នក
+      ខ្ញុំតែងតែមានស្នាមញញឹម។ 🥰
+    </p>
 
-    <button class="no" onclick="answer(false)">
-      🥺 សុំគិតបន្តិចសិន
-    </button>
+    <p>
+      ថ្ងៃនេះ ខ្ញុំសម្រេចចិត្តប្រាប់អ្នក
+      ពីអារម្មណ៍ពិតរបស់ខ្ញុំថា...
+    </p>
+
+    <p class="highlight">
+      ខ្ញុំចូលចិត្តអ្នក ❤️
+    </p>
+
+    <p>
+      ខ្ញុំមិនដឹងថាអ្នកមានអារម្មណ៍ដូចខ្ញុំដែរឬអត់ទេ។
+      អ្នកមិនចាំបាច់ប្រញាប់ឆ្លើយក៏បាន។
+      ខ្ញុំនឹងគោរពការសម្រេចចិត្តរបស់អ្នកជានិច្ច។
+    </p>
+
+    <p>
+      គ្រាន់តែចង់ឱ្យអ្នកដឹងថា
+      អ្នកពិតជាមនុស្សពិសេសម្នាក់សម្រាប់ខ្ញុំ។ 💗
+    </p>
+
+    <div class="answers">
+
+      <button class="yes" onclick="answer(true)">
+        💖 ខ្ញុំក៏ចូលចិត្តអ្នកដែរ
+      </button>
+
+      <button class="no" onclick="answer(false)">
+        🥺 សុំគិតបន្តិចសិន
+      </button>
+
+    </div>
 
     <div class="result" id="result"></div>
 
-  </div>
+  </section>
 
   <div class="footer">
-    MADE WITH ❤️ | Zeii Nha
+    MADE WITH <span>♥</span> | ZEII NHA
   </div>
 
-</div>
+</main>
 
 <script>
 
@@ -287,11 +467,6 @@ const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
 
 music.volume = 0.7;
-
-// Auto play attempt
-window.addEventListener("load", () => {
-  playMusic();
-});
 
 function playMusic() {
   music.play().then(() => {
@@ -301,7 +476,6 @@ function playMusic() {
   });
 }
 
-// Music button
 function toggleMusic() {
   if (music.paused) {
     playMusic();
@@ -311,86 +485,99 @@ function toggleMusic() {
   }
 }
 
-// Open love confession
+// Open confession
+
 function openLove() {
 
-  document.getElementById("message").style.display = "block";
+  const message = document.getElementById("message");
 
-  document.querySelector(".open-btn").style.display = "none";
+  message.classList.add("show");
 
-  // Start music from this user click
+  document.getElementById("openBtn").style.display = "none";
+
   playMusic();
 
-  hearts();
+  hearts(25);
 
   setTimeout(() => {
-    document.getElementById("message").scrollIntoView({
+    message.scrollIntoView({
       behavior: "smooth",
-      block: "center"
+      block: "start"
     });
-  }, 300);
+  }, 250);
+
 }
 
 // Answer
+
 function answer(value) {
 
   const result = document.getElementById("result");
 
-  if(value) {
+  if (value) {
+
     result.innerHTML =
-      "YAYYYY! 🥰❤️<br>អរគុណដែរអ្នកគិតដូចខ្ញុំ";
+      "YAYYYY! 🥰❤️<br>" +
+      "អរគុណដែលអ្នកចែករំលែកអារម្មណ៍ដូចខ្ញុំ។ 💍";
 
     hearts(50);
 
   } else {
+
     result.innerHTML =
-      "មិនអីទេ... ខ្ញុំនឹងគោរពការសម្រេចចិត្តរបស់អ្នក។ ❤️";
+      "មិនអីទេ ❤️<br>" +
+      "ចំណាយពេលគិតតាមដែលអ្នកចង់បាន។ " +
+      "ខ្ញុំនឹងគោរពការសម្រេចចិត្តរបស់អ្នក។";
+
   }
+
 }
 
 // Floating hearts
-function hearts(amount = 30) {
 
-  for(let i = 0; i < amount; i++) {
+function hearts(amount = 20) {
+
+  for (let i = 0; i < amount; i++) {
 
     const h = document.createElement("div");
 
     h.className = "float-heart";
 
-    h.innerHTML = ["❤️","💗","💕","💖","💘"][
-      Math.floor(Math.random()*5)
+    h.innerHTML = ["❤️", "💗", "💕", "💖", "💘"][
+      Math.floor(Math.random() * 5)
     ];
 
-    h.style.left = Math.random()*100 + "vw";
+    h.style.left = Math.random() * 100 + "vw";
+
+    h.style.fontSize = (18 + Math.random() * 20) + "px";
 
     h.style.animationDuration =
-      (3 + Math.random()*4) + "s";
+      (4 + Math.random() * 4) + "s";
 
     document.body.appendChild(h);
 
-    setTimeout(() => h.remove(), 7000);
+    setTimeout(() => h.remove(), 8000);
+
   }
+
 }
 
-// Automatic floating hearts
+// Automatic hearts
+
 setInterval(() => {
 
   const h = document.createElement("div");
 
   h.className = "float-heart";
   h.innerHTML = "💗";
-  h.style.left = Math.random()*100 + "vw";
+  h.style.left = Math.random() * 100 + "vw";
+  h.style.fontSize = "22px";
 
   document.body.appendChild(h);
 
-  setTimeout(() => h.remove(), 6000);
+  setTimeout(() => h.remove(), 7000);
 
-}, 1200);
-
-// Retry music after first user interaction if browser blocked autoplay
-document.addEventListener("pointerdown", () => {
-  if (music.paused) playMusic();
-}, { once: true });
+}, 1500);
 
 </script>
 
